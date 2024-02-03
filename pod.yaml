@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: akpod # name of pod or any kind 
+spec: # to create env
+  containers:
+  - name: akc
+    image: httpd
+    ports:
+     - containerPort: 80
