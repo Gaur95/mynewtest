@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: myapp
+spec:
+  imagePullSecret:
+  - name: mysec
+  containers:
+  - name: myapp
+    image: aakashgaur57/blue
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+    ports:
+      - containerPort: 80
