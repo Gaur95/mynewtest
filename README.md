@@ -88,3 +88,27 @@ kubectl create secret docker-registry mysec --docker-server=docker.io --docker-u
  2014  kubectl create secret docker-registry mysec --docker-server=docker.io --docker-username=akash --docker-password=xyz123  
  2015  kubectl get secrets 
 ```
+## deployment
+```
+akash@sky:~/mynewtest$ kubectl create deployment mydep --replicas 5 --image nginx --port 80 --dry-run=client -o yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: mydep
+  name: mydep
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: mydep
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: mydep
+    spec:
+      containers:
+```
