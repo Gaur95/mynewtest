@@ -112,3 +112,28 @@ spec:
     spec:
       containers:
 ```
+### 14feb history
+```
+ kubectl get node
+ 1996  kubectl get pod
+ 1997  kubectl delete deployments.apps mydeployment 
+ 1998  kubectl get deploy
+ 1999  kubectl get pod
+ 2000  kubectl get pod -A
+ 2001  kubectl get pod -A -o wide
+ 2002  kubectl get ds
+ 2003  kubectl get ds -A
+ 2004  kubectl get ds -A -o yaml
+ 2005  kubectl apply -f https://raw.githubusercontent.com/Gaur95/mynewtest/k8s/ns.yaml
+ 2006  kubectl get ns
+ 2007  cd mynewtest/
+ 2008  ls
+ 2009  code .
+ 2010  kubectl get nsvc
+ 2011  kubectl get svc
+ 2012  kubectl apply -f deployment.yaml 
+ 2013  kubectl get svc
+ 2014  kubectl get deployments.apps 
+ 2015  kubectl get pod
+ 2016  kubectl get pod -o wide
+```

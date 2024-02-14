@@ -9,4 +9,4 @@ spec:
   ports:
   - port: 1122
     targetPort: 80
-  NodePort: 30002
+    nodePort: 30002

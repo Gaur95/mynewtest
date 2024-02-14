@@ -8,7 +8,7 @@ spec:
       maxSurge: 10%
       maxUnavailable: 10%
     type: RollingUpdate
-  replicas: 10
+  replicas: 1
   selector:
     matchLabels:
       color: red
@@ -22,3 +22,18 @@ spec:
         image: httpd
         ports:
         - containerPort: 80
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mysvc
+spec:
+  type: NodePort
+  selector:
+    color: red 
+  ports:
+  - port: 1122
+    nodePort: 30002
+    targetPort: 80
+    
