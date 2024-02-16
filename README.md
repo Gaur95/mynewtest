@@ -137,3 +137,18 @@ spec:
  2015  kubectl get pod
  2016  kubectl get pod -o wide
 ```
+## dashboard
+Accessing the Dashboard UI
+To protect your cluster data, Dashboard deploys with a minimal RBAC configuration by default. Currently, Dashboard only supports logging in with a <b>Bearer Token</b>. To create a token for this demo, you can follow our guide on creating a sample user.
+
+You can enable access to the Dashboard using the kubectl command-line tool, by running the following command:
+```
+kubectl proxy
+```
+Kubectl will make Dashboard available at 
+http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/.
+
+### creat token for serviceaccount
+```
+kubectl create token kubernetes-dashboard --namespace kubernetes-dashboard
+```
