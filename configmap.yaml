@@ -1,0 +1,34 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: configmap-ssh
+data:
+  SSH_USER: ak
+  SSH_PASSWORD: xyz
+
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: myapp-pod
+  labels:
+   app: configmap
+spec:
+  containers:
+  - name: myapp-container
+    image: aakashgaur57/myssh
+    envFrom:
+    - configMapRef:
+        name: configmap-ssh
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: myapp
+spec:
+  selector:
+    app: configmap
+  ports:
+  - port: 1122
+    targetPort: 22
