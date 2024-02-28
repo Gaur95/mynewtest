@@ -1,10 +1,16 @@
 apiVersion: v1
+kind: Namespace
+metadata:
+  name: akash1
+---
+apiVersion: v1
 kind: ConfigMap
 metadata:
   name: configmap-ssh
 data:
-  SSH_USER: ak
-  SSH_PASSWORD: xyz
+  color: blue 
+  SSH: nothing
+  code: some 
 
 ---
 apiVersion: v1
@@ -16,19 +22,7 @@ metadata:
 spec:
   containers:
   - name: myapp-container
-    image: aakashgaur57/myssh
+    image: nginx
     envFrom:
     - configMapRef:
         name: configmap-ssh
-
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: myapp
-spec:
-  selector:
-    app: configmap
-  ports:
-  - port: 1122
-    targetPort: 22
