@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Config
+clusters:
+ - name: my-cluster
+   cluster:
+    server: https://3.111.137.153:6443
+users:
+  - name: monitor-sa
+    user:
+      token: eyJhbGciOiJSUzI1NiIsImtpZCI6InVFOU5Ca1l5YTJVRmJramUySUZLVm1rTEJIckNJWTVtN0Q5eDRYZWRHdDAifQ.eyJhdWQiOlsiaHR0cHM6Ly9rdWJlcm5ldGVzLmRlZmF1bHQuc3ZjLmNsdXN0ZXIubG9jYWwiXSwiZXhwIjoxNzA5NjU3MjA3LCJpYXQiOjE3MDk2NTM2MDcsImlzcyI6Imh0dHBzOi8va3ViZXJuZXRlcy5kZWZhdWx0LnN2Yy5jbHVzdGVyLmxvY2FsIiwia3ViZXJuZXRlcy5pbyI6eyJuYW1lc3BhY2UiOiJkZWZhdWx0Iiwic2VydmljZWFjY291bnQiOnsibmFtZSI6Im1vbml0b3Itc2EiLCJ1aWQiOiI5NDk4ZWIxMy02MDBkLTRlMzAtOTY5ZC0wZWQyMDQ4ODFiZDcifX0sIm5iZiI6MTcwOTY1MzYwNywic3ViIjoic3lzdGVtOnNlcnZpY2VhY2NvdW50OmRlZmF1bHQ6bW9uaXRvci1zYSJ9.SolL1Ew1FGaqpvfLcncOHzL59jOqw36eJD5q6Hsb6-UccpI-CZojgf62EOBG7h_j6Djkr6eZIgSeLtkwstJ6DaeN0BxvFdOCy5yKStFDcOMSdo4d22xAxrxv6dFWKfVNaCrc56sikks-HNWgGGpf5S6lM7gB7cL87-nupNCrbtx8g39q9Ppod7k03l6mU0ZDJbIviry-1X7HyrbdUxKll97Jm0xLdeB-mUoW6J-tWiAsZq0MeESa_1U6jDJUGhZtrJ0Xnakn_cYl-CWMmEDDeaM5HG7j8kPptpKJ_WC58JSCMJiE5-wcsZS6oXz3-RMz_CDlejwABbFnNQHRwl9mgw
+contexts:
+  - name: monitor-sa
+    context:
+      cluster: my-cluster
+      user: monitor-sa
+current-context: monitor-sa

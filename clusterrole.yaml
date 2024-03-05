@@ -3,6 +3,6 @@ kind: ClusterRole
 metadata:
   name: monitor-sa-cluster-role
 rules:
-- apiGroups: ["*"]
-  resources: ["pods"]
+- apiGroups: [""]
+  resources: ["pods","service"]
   verbs: ["get" ,"list"] 
